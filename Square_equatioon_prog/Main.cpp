@@ -1,19 +1,14 @@
-
-
-
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>
  
- //! if number of roots is infinite
+//! if number of roots is infinite
 #define INF_ROOTS 3 
 
 //! solve a linear equation
 int SolveLin(double b, double c, double *x);
 
-
 int SolveSq(double a, double b, double c, double *x1, double *x2);
-
 
 int SolveLin(double b, double c, double *x) {
 	if (b == 0)
@@ -26,6 +21,7 @@ int SolveLin(double b, double c, double *x) {
 			return 1;
 	}
 }
+
 //! It solves equations like ax^2 + bx + c = 0
 //!
 //! @param [in] a a-coefficient
@@ -35,8 +31,6 @@ int SolveLin(double b, double c, double *x) {
 //! @param [out] x2 second root
 //!
 //! \return number of roots
-
-
 int SolveSq(double a, double b, double c, double *x1, double *x2) {
 
 	assert(isfinite(a));
