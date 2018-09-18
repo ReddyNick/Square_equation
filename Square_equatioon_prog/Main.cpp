@@ -1,19 +1,17 @@
 
 
-//зачем указатели вместо ссылок
 
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>
  
-
-// if number of roots is infinite
+ //! if number of roots is infinite
 #define INF_ROOTS 3 
 
-// solve a linear equation
+//! solve a linear equation
 int SolveLin(double b, double c, double *x);
 
-// solve a square equation
+
 int SolveSq(double a, double b, double c, double *x1, double *x2);
 
 
@@ -28,6 +26,17 @@ int SolveLin(double b, double c, double *x) {
 			return 1;
 	}
 }
+//! It solves equations like ax^2 + bx + c = 0
+//!
+//! @param [in] a a-coefficient
+//! @param [in] b b-coefficient
+//! @param [in] c c-coefficient
+//! @param [out] x1 first root
+//! @param [out] x2 second root
+//!
+//! \return number of roots
+
+
 int SolveSq(double a, double b, double c, double *x1, double *x2) {
 
 	assert(isfinite(a));
@@ -90,3 +99,4 @@ int main(){
 	}
 	return 0;
 }
+
