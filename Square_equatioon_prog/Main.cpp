@@ -4,12 +4,15 @@
  
 //! if number of roots is infinite
 #define INF_ROOTS 3 
-
+#define epsilon 1e-7
 //! solve a linear equation
 int SolveLin(double b, double c, double *x);
 
 int SolveSq(double a, double b, double c, double *x1, double *x2);
 
+bool Isequal(double a, double b) {
+	return abs(a - b) < epsilon;
+}
 int SolveLin(double b, double c, double *x) {
 	if (b == 0)
 		if (c == 0)
@@ -49,7 +52,7 @@ int SolveSq(double a, double b, double c, double *x1, double *x2) {
 
 		if (D < 0)
 			return 0;
-		if (D == 0) {
+		if (Isequal(D,0)) {
 			*x1 = -b / (2 * a);
 			return 1;
 		}
